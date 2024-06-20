@@ -18,19 +18,13 @@ let candidateAnswers;
 
 
 function askForName() {
-    // TODO 1.1b: Ask for candidate's name
-    const input = require('readline-sync');
-    let candidateName = input.question("What is your name?");
-    console.log("Hello, " + candidateName + "!");
+    // TODO 1.1b: Ask for candidate's name //
+  candidateName = input.question("What is your name?");
 }
-
-// Call the function to prompt the user for their name
-askForName();
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   const input = require('readline-sync');
 candidateAnswer = input.question(question);
-console.log(candidateAnswer);
 
 }
 function gradeQuiz(candidateAnswers) {
@@ -50,14 +44,12 @@ if(candidateAnswer) {
 }
 
 function runProgram() {
-  askForName();
-  // TODO 1.1c: Greet candidate using their name //
-  candidateName = input.question("What is your name?")
-  console.log("Hello, " + candidateName + "!");
-}
+ askForName()
+// TODO 1.1c: Greet candidate using their name //
+ console.log("Hello, " + candidateName + "!");
   askQuestion();
   gradeQuiz(this.candidateAnswers);
-
+}
 // ----------- Don't write any code or change any code below this line ---------- //
 module.exports = {
   candidateName: candidateName,
