@@ -44,21 +44,25 @@ function askQuestion() {
 
 }
 function gradeQuiz(candidateAnswers) {
-
+  let correctCount = 0
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-
   for (let i = 0; i < candidateAnswers.length; i++) {
     if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+      correctCount++
       console.log(`${ i + 1}) ${questions[i]}\nGood job ${candidateName}!\nYou answered: ${candidateAnswers[i]} \nThe correct answer is: ${ correctAnswers[i] } \n`);
   } else {
     console.log(`${ i + 1}) ${questions[i]} \nSorry try again\nYou answered: ${candidateAnswers[i]} \nThe correct answer is: ${ correctAnswers[i] } \n`);
 }
-    
-
   }
+ //TODO 3.2 use this variable to calculate the candidates score.
+let grade = (correctCount/correctAnswers.length) * 100;
+  console.log(`Your overall grade: ${grade}%`);
 
-
-let grade;  //TODO 3.2 use this variable to calculate the candidates score.
+if (grade >= 80) {
+console.log(`Great job ${candidateName} you passed!`); }
+else {
+  console.log("Sorry try again")
+}
 
 
 return grade;
